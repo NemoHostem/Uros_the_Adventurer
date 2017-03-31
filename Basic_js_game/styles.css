@@ -1,0 +1,149 @@
+.upper-data {
+	float: left;
+	margin-right: 1%;
+	color: green;
+}
+
+.agreeButton {
+	float: left;
+	background-color: green;
+	color: black;
+	width: 50%;
+}
+
+.disagreeButton {
+	float: right;
+	background-color: red;
+	color: white;
+	width: 50%;
+}
+
+.buy-buttons {
+	width: 69%;
+	float: left;
+	margin-right: 1px;
+	background-color: brown;
+}
+
+.buy-buttons button {
+	width: 150px;
+	height: 150px;
+}
+
+.functionality-buttons {
+	float: right;
+	background-color: gray;
+	color: white;
+	width: 30%;
+}
+
+.functionality-buttons button {
+	width: 49%;
+	background-color: red;
+	color: white;
+}
+
+.shop-logo {
+	width: 70%;
+	height: 70%;
+}
+
+.inv-logo {
+	width: 100px;
+	height: 100px;
+}
+
+.inv-divs-empty {
+	width: 120px;
+	height: 120px;
+	float: left;
+	margin-right: 1px;
+	background-color: brown;
+}
+
+.inv-divs-filled {
+	width: 120px;
+	height: 120px;
+	float: left;
+	background-color: green;
+}
+
+.invDivsUse {
+	width: 30%;
+	height: 20px;
+	float: left;
+	vertical-align: bottom;
+	background-color: green;
+}
+
+.invDivsAmount {
+	width: 20%;
+	height: 20px;
+	float: left;
+	vertical-align: bottom;
+	background-color: gray;
+}
+
+.invDivsSell {
+	width: 50%;
+	height: 20px;
+	float: right;
+	vertical-align: bottom;
+	background-color: orange;
+}
+
+.invDivsDiscard {
+	width: 50%;
+	height: 20px;
+	float: right;
+	display: none;
+	vertical-align: bottom;
+	background-color: red;
+}
+
+#data-view {
+	width: 100%;
+	height: 5%;
+	display: inline-block;
+}
+
+#inventory-view {
+	width: 100%;
+	height: 25%;
+	margin-top: 2%;
+	display: inline-block;
+}
+
+#go-to-town-view {
+	width: 40%;
+	height: 50%;
+	margin-left: 30%;
+	margin-top: 2%;
+	text-align: center;
+	display: none;
+}
+
+#go-to-town-view .buttons {
+	background-color: gray;
+}
+
+#shop-view {
+	width: 100%;
+	height: 50%;
+	margin-top: 2%;
+	display: inline-block;
+}
+
+#outside-view {
+	width: 100%;
+	height: 50%;
+	margin-top: 2%;
+	display: none;
+}
+
+#interface-functions {
+	width: 20%;
+	height: 10%;
+	margin-top: 2%;
+	display: inline-block;
+}

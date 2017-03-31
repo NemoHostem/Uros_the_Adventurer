@@ -1,0 +1,242 @@
+Game idea:
+
+Survival game
+Game ends within 10 days/(turns).
+Player has stats and they are used to fight enemies.
+Main goal is to collect as much points as possible.
+Player starts with 1000 gold in a town. [Day 0]
+Prices can change in every store.
+
+Player stats:
+Attack: 10 [How much players one strike will hit.]
+Defense: 10 [How much damage is prevented (/10) and chance of block (/200)]
+Hitpoints: 80 [Reaching <20 gives negative buff, reaching 0 kills.]
+Max hitpoints: 100
+Thirstyness level: 1 [+1 each day, while not given water. Reaching 5 kills. minimum 0]
+Wanted level: 0 [Max 5, crimes can increase level, which causes increased risk of getting caught in town]
+Mood: 8 [Max 10, while mood reaches 0 player kills itself]
+Inventory size: 10
+Speed: 100
+
+Achieving points:
+Items are sold after game ends and player is not dead. Item value / 10 = 1 point.
+Surviving a day: 15 points.
+Completing random quests: n points.
+
+Each day: Order important
+
+Player can choose n times from a few choices. [Outside town]
+Random events [Outside town]
+Player can complete different random quests. [Outside town]
+Player can choose if he/she enters town.
+	If goes to town:
+	Player can buy/sell items between the shop and the inventory. [In town]
+Player can use necessary items. (Food, Water, maybe buffs?) [Outside town]
+
+Choose options:
+-Resting: +2 hitpoints
+-Hunting: Great possibility of animal enemy attacking.
+-Having conversation with a stranger: Check conversation outcome
+-Stealing:
+	Wanted level +[0,2]
+	Possibly gets caught -> fighting enemy man/woman
+	+[1,3] items, if successful.
+-Searching/looting:
+	-Can find dead body -> possibly loot items [1,5]
+	-Can find nothing
+	-Can find berries or vegetables [1,5]
+	-Can find enemy (you may attack first)
+-Playing: -2 hitpoints, +1 Mood
+
+Random events:
+-It rains. [-1 thirstyness, -1 Mood]
+-Injury. [negative buff, [-5,-20] hitpoints, [-1,-2] Mood]
+-Free feast [+30 hitpoints, +3 Mood]
+-Broken cart (Cart wheel can be replaced)
+-Wanted list member wants to fight
+
+Random quests:
+-Give thirsty man/woman a water:
+	If you give:
+		-1 water
+		+[10,20] points
+	If you don't give:
+		Possibly a negative buff (25%)
+-Give food to a hungry man/woman:
+	If you give:
+		-1 chosen food
+		+hp amount of points
+	If you don't give:
+		Possibly a negative buff (25%)
+-Duel a crazy cowboy:
+	-loses hp (might die)
+	-Fight goes until one dies.
+	+lot of points
+	+Normal random items.
+	+Legendary item (price 5xbuffed item, stats 3x better)
+-Repair someones cart:
+	If you repair:
+		-1 Cart wheel
+		+quite lot of points
+	If you don't repair:
+		Possibly a negative buff (50%)
+
+Items:
+	Food: (Hp points do not go over max hp.)
+		Berries: 10 hp. Price: 20
+		Vegetables: 20 hp. Price: 30
+		Rat meat: 20 hp. Price: 30
+		Chicken: 40 hp. Price: 50
+		Human meat: 50 hp. Price 20 (not bought/sold in the shop)
+		Wolf meat: 70 hp. Price: 100
+		Bear meat: 120 hp. Price: 200
+	Water:
+		Dirty water: [50% chance -20 hp, 50% chance -1 thirstyness] Price: 10
+		Normal water: -1 thirstyness Price: 30
+		Holy water: -3 thirstyness /50% chance to give holy spirit Price: 200
+	Weapons:
+		Dagger: +10 attack Price: 80
+		Knife: +5 attack Price: 40
+		Scimitar: +20 attack Price: 250
+		Rifle: +50 attack (needs ammo) (two-handed) Price: 450
+		Crossbow: +30 attack (needs arrows) (two-handed) Price: 300
+	Ammunition:
+		Ammo: 20 / 10 pcs
+		Arrows: 15 / 10 pcs
+	Armor:
+		Helmet: +10 defense Price: 40
+		Chainmail: +15 defense /same slot as platebody Price: 80
+		Platebody: +50 defense /same slot as chainmail Price: 350
+		Gloves: +5 defense Price: 20
+		Pants: +20 defense Price: 120
+		Shield: +25 defense (cannot be used with two-handed weapon) Price: 120
+		Boots: +5 defense /speed +50 Price: 50
+	Potions/Buffs:
+		Attack potion: Attack buff 75%, Poisoning 25% Price: 100
+		Defense potion: Defense buff 75%, Poisoning 25% Price: 100
+		Hitpoints potion: Hitpoints buff 75%, Poisoning 25% Price: 100
+	Other items:
+		Donkey: /speed +100 Price: 250
+		Horse: /speed +200 Price: 400
+		Bag: Adds 5 slots to inventory Price: 50
+		Cart: /speed -50 Gives infinite inventory Price: 500
+		Cart wheel: Price: 50
+		
+Buffs:
+	Positive:
+	Speed buff: +50 speed for 3 days.
+	Holy spirit: No thirstiness or negative hitpoints next day.
+	Attack buff: [-10%, +100%] for 3 days
+	Defense buff: [-10%, +100%] for 3 days
+	Hitpoints buff: [-10%, +100%] Sets Max hitpoints to 200 for 3 days.
+	Good reputation: -1 Wanted level.
+	
+	Negative:
+	Negative speed buff: -50 speed for 3 days.
+	Hunger curse: Double negative effects of hitpoints for next day.
+	Negative attitude: Mood goes down additional 1 point for 3 days.
+	Poisoning: -20 hp each day for 3 days.
+	
+Enemies:
+	Animals:
+		Bear:
+			Attack: 40
+			Defense: 50
+			Hitpoints: 150
+			Loot:
+				Bear meat [1,2]
+				Legendary item [1,2]
+				Other random items [1,10]
+		Wolf:
+			Attack: 15
+			Defense: 20
+			Hitpoints: 40
+			Loot:
+				Wolf meat [1,2]
+				Legendary item [0,1] (50%)
+				Other random items [1,6]
+		Chicken:
+			Attack: 3
+			Defense: 10
+			Hitpoints: 25
+			Loot:
+				Chicken 1
+				Legendary item [0,1] (4%)
+				Other random items [1,3]
+		Rat:
+			Attack: 5
+			Defense: 5
+			Hitpoints: 15
+			Loot:
+				Rat meat [1,2]
+				Legendary item [0,1] (2%)
+				Other random items [1,2]
+	Humans:
+		Man:
+			Attack: [15,20]
+			Defense: [20,40]
+			Hitpoints: [60,80]
+			Loot:
+				Human meat 1
+				Legendary item [0,1] (5%)
+				Gold: [0,400]
+				Other random items [1,2]
+		Woman:
+			Attack: [5,30]
+			Defense: [5,60]
+			Hitpoints: [30,150]
+			Loot:
+				Human meat 1
+				Legendary item [0,1] (5%)
+				Gold: [0,100]
+				Other random items [1,5]
+		Wanted list member:
+			Attack: [15,30]
+			Defense: [25,50]
+			Hitpoints: [80,120]
+			Loot:
+				Human meat 1
+				Legendary item [0,1] (50%)
+				Gold: [100, 1000]
+				Other random items [1,3]
+		Crazy cowboy:
+			Attack: 50
+			Defense: 50
+			Hitpoints: 150
+			Loot:
+				Human meat 1
+				Legendary item [1,3] (33%)
+				Gold: 500
+				Other random items [1,10]
+		
+Conversation outcome:
+	Buff:
+		-Talking to a priest: Holy spirit
+		-Talking to a begger: Negative speed buff
+		-Talking to a cowboy: Negative attitude
+		-Talking to a man/woman: random buff
+	Tip:
+		-Chance of offers, with coupons.
+		-Tells you to buy something
+		-Tells you how to find wanted list members //Increases search chance by 25%. Resets while found.
+	Free item:
+		-Chance of random items [1,2]
+		-Mood +1
+	Trade offer:
+		-Chance to trade items or money to items or money
+	Nothing:
+		-Chance of Mood [-1,+2]
+	
+Shopping:
+	You have chance to bribe people in the shop. -[1,5 Wanted level]
+	Prices can change [-20%, +20%]
+	With coupon you can get -50% off from store price.
+	
+Speed:
+	If speed is 0, player has 1 choice turn.
+	Random event may still happen.
+	Player can complete 1 random quest.
+	
+	Every +50 speed gives 1 additional choice turn.
+	Random event chance = 80/(100+speed)
+	Every +100 speed gives 1 additional random quest.

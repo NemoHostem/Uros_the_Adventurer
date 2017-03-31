@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Uros - the Adventurer</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="styles.css">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script language="javascript" type="text/javascript" src="help-functions.js"></script>
+	<!--<script language="javascript" type="text/javascript" src="classes.js"></script>-->
+	<script language="javascript" type="text/javascript" src="main.js"></script>
+	
+</head>
+<body>
+
+	<div id="data-view">
+		<div class="upper-data">Day: <span id="days">0</span></div>
+		<div class="upper-data">Gold: <span id="gold">1000</span></div>
+		<div class="upper-data">Points: <span id="score">0</span></div>
+		<div class="upper-data">Attack: <span id="attack">10</span></div>
+		<div class="upper-data">HitPoints: <span id="hitpoints">80</span>/<span id="maxHitpoints">100</span></div>
+		<div class="upper-data">Defense: <span id="defense">10</span></div>
+		<div class="upper-data">Speed: <span id="speed">100</span></div>
+		<div class="upper-data">Thirstyness: <span id="thirstyness">1</span></div>
+		<div class="upper-data">Wanted: <span id="wanted">0</span></div>
+		<div class="upper-data">Mood: <span id="mood">8</span></div>
+	</div>
+	
+	<div id="inventory-view">
+		<h3>Inventory</h3>
+		<div id="item-list">
+			<div class='inv-divs-filled'>
+				<div class="item_dw">
+					<div class="invDivsImg"><img class="inv-logo" src="images/dirtyWater.png"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">1</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_nw">
+					<div class="invDivsImg"><img class="inv-logo" src="images/normalWater.png"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_hw">
+					<div class="invDivsImg"><img class="inv-logo" src="images/holyWater.png"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_fb">
+					<div class="invDivsImg"><img class="inv-logo" src="images/fBerries.png"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_fv">
+					<div class="invDivsImg"><img class="inv-logo" src="images/fVegetables.jpeg"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_fr">
+					<div class="invDivsImg"><img class="inv-logo" src="images/fRatMeat.png"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_fc">
+					<div class="invDivsImg"><img class="inv-logo" src="images/fChicken.jpeg"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_fh">
+					<div class="invDivsImg"><img class="inv-logo" src="images/fHumanmeat.png"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_fw">
+					<div class="invDivsImg"><img class="inv-logo" src="images/fWolfmeat.jpeg"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_fbe">
+					<div class="invDivsImg"><img class="inv-logo" src="images/fBearmeat.png"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_wk">
+					<div class="invDivsImg"><img class="inv-logo" src="images/wKnife.png"></div>
+					<button class="invDivsUse">Equip</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_wd">
+					<div class="invDivsImg"><img class="inv-logo" src="images/wDagger.png"></div>
+					<button class="invDivsUse">Equip</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_ws">
+					<div class="invDivsImg"><img class="inv-logo" src="images/wScimitar.png"></div>
+					<button class="invDivsUse">Equip</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_wc">
+					<div class="invDivsImg"><img class="inv-logo" src="images/wCrossbow.png"></div>
+					<button class="invDivsUse">Equip</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_wr">
+					<div class="invDivsImg"><img class="inv-logo" src="images/wRifle.jpeg"></div>
+					<button class="invDivsUse">Equip</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_wam">
+					<div class="invDivsImg"><img class="inv-logo" src="images/ammo.jpeg"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_war">
+					<div class="invDivsImg"><img class="inv-logo" src="images/arrow.jpeg"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_ah">
+					<div class="invDivsImg"><img class="inv-logo" src="images/aHelmet.jpeg"></div>
+					<button class="invDivsUse">Equip</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_ac">
+					<div class="invDivsImg"><img class="inv-logo" src="images/aChainbody.jpeg"></div>
+					<button class="invDivsUse">Equip</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_ap">
+					<div class="invDivsImg"><img class="inv-logo" src="images/aPlatebody.jpeg"></div>
+					<button class="invDivsUse">Equip</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_ag">
+					<div class="invDivsImg"><img class="inv-logo" src="images/aGloves.jpeg"></div>
+					<button class="invDivsUse">Equip</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_as">
+					<div class="invDivsImg"><img class="inv-logo" src="images/aShield.jpeg"></div>
+					<button class="invDivsUse">Equip</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_al">
+					<div class="invDivsImg"><img class="inv-logo" src="images/aPlatelegs.jpeg"></div>
+					<button class="invDivsUse">Equip</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_ab">
+					<div class="invDivsImg"><img class="inv-logo" src="images/aBoots.png"></div>
+					<button class="invDivsUse">Equip</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_pa">
+					<div class="invDivsImg"><img class="inv-logo" src="images/pAttack.png"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_pd">
+					<div class="invDivsImg"><img class="inv-logo" src="images/pDefense.png"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_ph">
+					<div class="invDivsImg"><img class="inv-logo" src="images/pHitpoints.png"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_od">
+					<div class="invDivsImg"><img class="inv-logo" src="images/donkey.jpeg"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_oh">
+					<div class="invDivsImg"><img class="inv-logo" src="images/horse.png"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_ob">
+					<div class="invDivsImg"><img class="inv-logo" src="images/bag.png"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_oc">
+					<div class="invDivsImg"><img class="inv-logo" src="images/cart.jpeg"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			<div class='inv-divs-filled'>
+				<div class="item_ocw">
+					<div class="invDivsImg"><img class="inv-logo" src="images/cartWheel.png"></div>
+					<button class="invDivsUse">Use</button>
+					<div class="invDivsAmount">0</div>
+					<button class="invDivsSell">Sell</button>
+					<button class="invDivsDiscard">Discard</button>
+				</div>
+			</div>
+			
+			<!--<div class='inv-divs-empty'></div>-->
+		</div>
+	</div>
+	
+	<div id="outside-view" style="display:none">
+		<h3>Outside of the town</h3>
+		<div class="downer-data">Actions left: <span id="actionsLeft">0</span></div>
+		<button id="action-rest">Rest</button>
+		<button id="action-hunt">Hunt animals</button>
+		<button id="action-steal">Steal from local people</button>
+		<button id="action-search">Search around</button>
+		<button id="action-play">Play</button>
+		<button id="action-speak">Speak to a stranger</button>
+		<button id="action-skip">Skip</button>
+		<button id="action-skip-all">Skip all</button>
+	</div>
+	
+	<div id="go-to-town-view" style="display:none">
+		<div class="dialog"> <p> Do you want to go to town? </p> </div>
+		<div class="buttons">
+			<button class="agreeButton" id="yesToTown">Yes, please!</button>
+			<button class="disagreeButton" id="noToTown">No, thank you!</button>
+		</div>
+	</div>
+	
+	<div id="shop-view">
+		<h3>Shop</h3>
+		<div class="buy-buttons">
+			<button id="add-water-dirty">Add a dirty water to backbag
+				<img class="shop-logo" src="images/dirtyWater.png">
+				<p class="price" id="item_dw">10</p>
+			</button>
+			<button id="add-water-normal">Add a water to backbag
+				<img class="shop-logo" src="images/normalWater.png">
+				<p class="price" id="item_nw">30</p>
+			</button>
+			<button id="add-water-holy">Add a holy water to backbag
+				<img class="shop-logo" src="images/holyWater.png">
+				<p class="price" id="item_hw">200</p>
+			</button>
+			<button id="add-food-berries">Add berries to backbag
+				<img class="shop-logo" src="images/fBerries.png">
+				<p class="price" id="item_fb">20</p>
+			</button>
+			<button id="add-food-vegetables">Add vegetables to backbag
+				<img class="shop-logo" src="images/fVegetables.jpeg">
+				<p class="price" id="item_fv">30</p>
+			</button>
+			<button id="add-food-ratmeat">Add rat meat to backbag
+				<img class="shop-logo" src="images/fRatmeat.png">
+				<p class="price" id="item_fr">30</p>
+			</button>
+			<button id="add-food-chicken">Add chicken to backbag
+				<img class="shop-logo" src="images/fChicken.jpeg">
+				<p class="price" id="item_fc">50</p>
+			</button>
+			<button id="add-food-wolfmeat">Add wolf meat to backbag
+				<img class="shop-logo" src="images/fWolfmeat.jpeg">
+				<p class="price" id="item_fw">100</p>
+			</button>
+			<button id="add-food-bearmeat">Add bear meat to backbag
+				<img class="shop-logo" src="images/fBearmeat.png">
+				<p class="price" id="item_fbe">200</p>
+			</button>
+			<button id="add-weapon-knife">Add a knife to backbag
+				<img class="shop-logo" src="images/wKnife.png">
+				<p class="price" id="item_wk">40</p>
+			</button>
+			<button id="add-weapon-dagger">Add a dagger to backbag
+				<img class="shop-logo" src="images/wDagger.png">
+				<p class="price" id="item_wd">80</p>
+			</button>
+			<button id="add-weapon-scimitar">Add a scimitar to backbag
+				<img class="shop-logo" src="images/wScimitar.png">
+				<p class="price" id="item_ws">250</p>
+			</button>
+			<button id="add-weapon-crossbow">Add a crossbow to backbag
+				<img class="shop-logo" src="images/wCrossbow.png">
+				<p class="price" id="item_wc">300</p>
+			</button>
+			<button id="add-weapon-rifle">Add a good rifle to backbag
+				<img class="shop-logo" src="images/wRifle.jpeg">
+				<p class="price" id="item_wr">450</p>
+			</button>
+			<button id="add-ammunition-ammo">Add ammo to backbag (10 pcs)
+				<img class="shop-logo" src="images/ammo.jpeg">
+				<p class="price" id="item_wam">20</p>
+			</button>
+			<button id="add-ammunition-arrow">Add arrow to backbag (10 pcs)
+				<img class="shop-logo" src="images/arrow.jpeg">
+				<p class="price" id="item_war">15</p>
+			</button>
+			<button id="add-armor-helmet">Add a helmet to backbag
+				<img class="shop-logo" src="images/aHelmet.jpeg">
+				<p class="price" id="item_ah">40</p>
+			</button>
+			<button id="add-armor-chainbody">Add a chainbody to backbag
+				<img class="shop-logo" src="images/aChainbody.jpeg">
+				<p class="price" id="item_ac">80</p>
+			</button>
+			<button id="add-armor-platebody">Add a platebody to backbag
+				<img class="shop-logo" src="images/aPlatebody.jpeg">
+				<p class="price" id="item_ap">350</p>
+			</button>
+			<button id="add-armor-gloves">Add good gloves to backbag
+				<img class="shop-logo" src="images/aGloves.jpeg">
+				<p class="price" id="item_ag">20</p>
+			</button>
+			<button id="add-armor-shield">Add a shield to backbag
+				<img class="shop-logo" src="images/aShield.jpeg">
+				<p class="price" id="item_as">120</p>
+			</button>
+			<button id="add-armor-platelegs">Add a platelegs to backbag
+				<img class="shop-logo" src="images/aPlatelegs.jpeg">
+				<p class="price" id="item_al">120</p>
+			</button>
+			<button id="add-armor-boots">Add good boots to backbag
+				<img class="shop-logo" src="images/aBoots.png">
+				<p class="price" id="item_ab">50</p>
+			</button>
+			<button id="add-potion-attack">Add attack potion to backbag
+				<img class="shop-logo" src="images/pAttack.png">
+				<p class="price" id="item_pa">100</p>
+			</button>
+			<button id="add-potion-defense">Add defense potion to backbag
+				<img class="shop-logo" src="images/pDefense.png">
+				<p class="price" id="item_pd">100</p>
+			</button>
+			<button id="add-potion-hitpoints">Add hitpoint potion backbag
+				<img class="shop-logo" src="images/pHitpoints.png">
+				<p class="price" id="item_ph">100</p>
+			</button>
+			<button id="add-other-donkey">Get yourself a fast donkey
+				<img class="shop-logo" src="images/donkey.jpeg">
+				<p class="price" id="item_od">250</p>
+			</button>
+			<button id="add-other-horse">Get yourself a good and fast horse
+				<img class="shop-logo" src="images/horse.png">
+				<p class="price" id="item_oh">400</p>
+			</button>
+			<button id="add-other-bag">Add yourself another backbag
+				<img class="shop-logo" src="images/bag.png">
+				<p class="price" id="item_ob">50</p>
+			</button>
+			<button id="add-other-cart">Add yourself a slow, but good cart
+				<img class="shop-logo" src="images/cart.jpeg">
+				<p class="price" id="item_oc">500</p>
+			</button>
+			<button id="add-other-cartwheel">Add a cart wheel to backbag
+				<img class="shop-logo" src="images/cartWheel.png">
+				<p class="price" id="item_ocw">50</p>
+			</button>
+			
+		</div>
+		<div class="functionality-buttons">
+			<button id="bribe">Bribe</button>
+			<button id="leave-shop">Leave Shop</button>
+		</div>
+	</div>
+
+	<div id="interface-functions">
+		<button id="submit-score">Submit score</button><br>
+		<button id="save">Save</button>
+		<button id="load">Load</button>
+	</div>
+	
+</body>
+</html>
